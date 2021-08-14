@@ -1,0 +1,12 @@
+﻿@model List<Pizza>
+
+<h2 class="text-center">Pizza list</h2>
+<div class="row">
+    <div class="col-md-5">
+        @for (int i = 0; i < Model.Count; i++)
+        {
+            <p>Id: @Model[i].Id, Name:@Model[i].Name, Is on Promotion: @Model[i].IsOnPromotion</p>
+
+        }
+    </div>
+</div>
