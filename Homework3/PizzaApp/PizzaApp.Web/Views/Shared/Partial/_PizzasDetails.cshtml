@@ -1,0 +1,14 @@
+﻿@model PizzaApp.Web.Models.ViewModels.PizzaDetailsViewModel
+
+<div class="card" style="width: 18rem;">
+    <div class="card-body">
+        <h5 class="card-title">@Model.Name</h5>
+        <p class="card-text">Pizza size: @Model.PizzaSize</p>
+        <p class="card-text">Pizza price: @Model.Price</p>
+        @if (Model.IsOnPromotion)
+            {
+                <p><strong>This pizza is on promotion</strong></p>
+            }
+        <a asp-controller="Pizza" asp-action="Details" asp-route-id="@Model.Id" class="btn btn-primary">Details</a>
+    </div>
+</div>

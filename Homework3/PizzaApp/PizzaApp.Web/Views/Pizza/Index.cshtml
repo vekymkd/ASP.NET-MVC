@@ -1,0 +1,12 @@
+﻿@model List<PizzaApp.Web.Models.ViewModels.PizzaDetailsViewModel>
+
+<h2 class="text-center">Pizza list</h2>
+<div class="row">
+    <div class="col-md-4">
+        @foreach (var item in Model)
+        {
+            <partial name="~/Views/Shared/Partial/_PizzasDetails.cshtml" for="@item" />
+            
+        }
+    </div>
+</div>
