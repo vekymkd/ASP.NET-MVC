@@ -1,0 +1,26 @@
+﻿@model PizzaViewModel
+
+<div class="form-group">
+    <label asp-for="Name" class="control-label">Pizza Name</label>
+    <input asp-for="Name" class="form-control" />
+</div>
+<div class="form-group">
+    <label asp-for="Price" class="control-label">Price</label>
+    <input asp-for="Price" class="form-control" />
+</div>
+<div class="form-group">
+    <label asp-for="isOnPromotion" class="control-label">Is it on promotion?</label>
+    <input asp-for="isOnPromotion" type="checkbox" />
+</div>
+<div class="form-group">
+    <label asp-for="HasExtras" class="control-label">Does it has extras?</label>
+    <input asp-for="HasExtras" type="checkbox" />
+</div>
+<div class="form-group">
+    <label asp-for="PizzaSize" class=" control-label">Size</label>
+    <select asp-for="PizzaSize" class="form-control" asp-items="@Html.GetEnumSelectList<PizzaSize>()"></select>
+</div>
+<div class="row">
+    <div class="col-md-6"><button type="submit" class="btn btn-success">Continue</button></div>
+    <div class="col-md-6"><a asp-action="Index" asp-controller="Pizza" class="btn btn-danger">Cancel</a></div>
+</div>

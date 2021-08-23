@@ -1,0 +1,28 @@
+﻿@model List<UserDetailsViewModel>
+
+    <div class="text-center mb-3">
+        <a asp-action="AddUser" asp-controller="User" class="btn btn-dark center">Add New User</a>
+    </div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+            {
+            <tr>
+
+                <th scope="row">@item.Id</th>
+                <td>@item.FullName</td>
+                <td><a asp-action="EditUser" asp-controller="User" asp-route-id="@item.Id" class="btn btn-outline-dark">Edit</a></td>
+                <td><a asp-action="DeleteUser" asp-controller="User" asp-route-id="@item.Id" class="btn btn-outline-danger">Delete</a></td>
+            </tr>
+        }
+    </tbody>
+</table>

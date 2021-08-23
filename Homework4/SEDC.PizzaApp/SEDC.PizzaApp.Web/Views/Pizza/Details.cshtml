@@ -1,0 +1,13 @@
+﻿@model PizzaDetailsViewModel
+
+@{
+    string isOnPromotionStatus = Model.IsOnPromotion ? "This pizza is currently on promotion!" : "This pizza is not on promotion!";
+}
+
+<h3>@ViewData["Title"]</h3>
+
+<partial name="~/Views/Shared/Partial/_PizzaDetails.cshtml" for="@Model" />
+
+<br />
+
+<h4 class="bolder text-danger">@isOnPromotionStatus</h4>

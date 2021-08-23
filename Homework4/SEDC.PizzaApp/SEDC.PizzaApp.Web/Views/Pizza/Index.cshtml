@@ -1,0 +1,12 @@
+﻿@model List<PizzaDetailsViewModel>
+
+<h3>@ViewData["Title"]</h3>
+<a asp-action="AddPizza" asp-controller="Pizza" class="btn btn-dark">Add new pizza</a>
+
+@foreach (var item in Model)
+{
+    <partial name="~/Views/Shared/Partial/_PizzaDetails.cshtml" for="@item" />
+    <a asp-action="Details" asp-controller="Pizza" asp-route-id="@item.Id">Details</a>
+    <a asp-action="EditPizza" asp-controller="Pizza" asp-route-id="@item.Id">Edit</a>
+    <a asp-action="DeletePizza" asp-controller="Pizza" asp-route-id="@item.Id">Delete</a>
+}

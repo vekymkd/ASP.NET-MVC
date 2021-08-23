@@ -1,0 +1,21 @@
+﻿@model OrderDetailsViewModel
+
+@{
+    string deliveredStatus = Model.Delivered ? "Your order is delivered!" : "Your order is not delivered!";
+}
+
+<div class="row">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-body">
+                <p>Id: @Model.Id</p>
+                <p>Payment Method: @Model.PaymentMethod</p>
+                <p>Pizza Name: @Model.PizzaName</p>
+                <p>Username: @Model.UserFullname</p>
+                <p>Price: @Model.Price</p>
+                <p>Store: @Model.PizzaStore</p>
+                <p>@deliveredStatus</p>
+            </div>
+        </div>
+    </div>
+</div>
