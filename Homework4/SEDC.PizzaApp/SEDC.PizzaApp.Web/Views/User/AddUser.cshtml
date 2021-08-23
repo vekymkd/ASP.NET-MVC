@@ -1,0 +1,11 @@
+﻿@model UserViewModel
+
+<h3>Add new user</h3>
+
+<div class="row">
+    <div class="col-md-6">
+        <form method="post">
+            <partial name="~/Views/Shared/Partial/_UserForm.cshtml" for="@Model" />
+        </form>
+    </div>
+</div>

@@ -1,0 +1,11 @@
+﻿@model SEDC.PizzaApp.Web.Models.ViewModels.OrderDetailsViewModel
+
+@{
+    var orderDetails = ViewData["OrderDetails"] as SEDC.PizzaApp.Web.Models.ViewModels.OrderDetailsViewModel;
+}
+
+
+<h3>Order details</h3>
+<partial name="~/Views/Shared/Partial/_OrderDetails.cshtml" for="@Model" />
+@Html.ActionLink("Home Page", "Index", "Home")
+@Html.ActionLink("Orders", "Index")

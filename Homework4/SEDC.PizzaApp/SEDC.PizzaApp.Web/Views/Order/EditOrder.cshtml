@@ -1,0 +1,35 @@
+﻿@model OrderViewModel
+
+<div class="row">
+    <div class="col-md-5">
+        <form method="post">
+            <input type="hidden" asp-for="@Model.Id" />
+            <div class="form-group">
+                <label asp-for="UserId" class="control-label">User</label>
+                <select asp-for="UserId" class="form-control" asp-items="@(new SelectList(ViewBag.Users, "Id", "FullName"))"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="PizzaName" class="control-label">Available Pizzas</label>
+                <select asp-for="PizzaName" class="form-control" asp-items="@(new SelectList(ViewBag.Pizzas, "Id", "PizzaName"))"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="PizzaStore" class="contol-label"></label>
+                <input asp-for="PizzaStore" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Delivered" class="control-label">Delivery status:</label>
+                <input asp-for="Delivered" type="checkbox" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="PaymentMethod" class="control-label">Payment method</label>
+                <select asp-for="PaymentMethod" class="form-control" asp-items="@Html.GetEnumSelectList<PaymentMethod>()">
+                    <option disabled>Please select payment method</option>
+                </select>
+            </div>
+            <div class="row">
+                <div class="col-md-6"><button type="submit" class="btn btn-success">Change order</button></div>
+                <div class="col-md-6"><a asp-action="Index" asp-controller="Order" class="btn btn-danger">Cancel</a></div>
+            </div>
+        </form>
+    </div>
+</div>

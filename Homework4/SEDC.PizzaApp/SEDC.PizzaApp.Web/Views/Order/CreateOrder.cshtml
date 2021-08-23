@@ -1,0 +1,36 @@
+﻿@model CreateOrderViewModel
+
+<h3>Create new order</h3>
+
+<div class="row">
+    <div class="col-md-5">
+        <form method="post">
+            <div class="form-group">
+                <label asp-for="User" class="control-label">User</label>
+                <select asp-for="User" class="form-control" asp-items="@(new SelectList(ViewBag.Users, "Id", "FullName"))">
+                    <option disabled selected>Select user</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="PizzaName" class="control-label">Available Pizzas</label>
+                <select asp-for="PizzaName" class="form-control" asp-items="@(new SelectList(ViewBag.Pizzas, "Id", "PizzaName"))">
+                    <option disabled selected>Please select pizza</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="PaymentMethod" class="control-label">Payment method</label>
+                <select asp-for="PaymentMethod" class="form-control" asp-items="@Html.GetEnumSelectList<PaymentMethod>()">
+                    <option disabled selected>Please select payment method</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="PizzaStore" class="contol-label"></label>
+                <input asp-for="PizzaStore" class="form-control" />
+            </div>
+            <div class="row">
+                <div class="col-md-6"><button type="submit" class="btn btn-success">Place order</button></div>
+                <div class="col-md-6"><a asp-action="Index" asp-controller="Order" class="btn btn-danger">Cancel</a></div>
+            </div>
+        </form>
+    </div>
+</div>
